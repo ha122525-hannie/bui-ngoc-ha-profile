@@ -1,21 +1,30 @@
 # WEBSITE PROFILE CÁ NHÂN - BÙI NGỌC HÀ
 
-> **Họ và tên sinh viên:** BÙI NGỌC HÀ  
-> **Ngành học:** Công nghệ Thông tin  
+> **Họ và tên:** BÙI NGỌC HÀ  
+> **Ngành học:** Công nghệ phần mềm (Software Engineering)  
 > **Kho lưu trữ GitHub:** [https://github.com/ha122525-hannie/bui-ngoc-ha-profile](https://github.com/ha122525-hannie/bui-ngoc-ha-profile)  
+> **Bản chạy trực tiếp (GitHub Pages):** [https://ha122525-hannie.github.io/bui-ngoc-ha-profile/](https://ha122525-hannie.github.io/bui-ngoc-ha-profile/)  
 > **Facebook cá nhân:** [https://www.facebook.com/profile.php?id=61561300656239](https://www.facebook.com/profile.php?id=61561300656239)
 
+---
+
+## 🎨 Thiết Kế & Tính Năng
+
+- **Giao diện tối giản Đen & Trắng (Monochrome):** Thiết kế tinh tế, độ tương phản cao, chuyển đổi linh hoạt Dark / Light Mode.
+- **Ngôn ngữ Web sử dụng:** HTML5, CSS3, JavaScript (ES6+), Python 3.
+- **Khởi chạy 1-Click bằng Python:** Tự khởi tạo server local và tự mở trình duyệt.
+
+---
 
 ## 💻 Danh Sách Các Ngôn Ngữ Web & Công Nghệ Sử Dụng
 
-1. **HTML5:**
-   - Xây dựng cấu trúc trang theo chuẩn ngữ nghĩa Semantic HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`).
-   - Tối ưu hóa SEO với đầy đủ thẻ Meta Title, Meta Description, Open Graph.
-   
-2. **CSS3 (Vanilla CSS):**
-3. **JavaScript (ES6+):**
-4. **Python 3 (Local Server & Auto Launcher):**
-5. **Công cụ phát triển:**
+1. **HTML5:** Cấu trúc trang chuẩn ngữ nghĩa Semantic HTML, tối ưu hiển thị.
+2. **CSS3 (Vanilla CSS):** Bố cục Flexbox / Grid, CSS Variables chuyển đổi Dark/Light mode, hiệu ứng mượt mà.
+3. **JavaScript (ES6+):** Typewriter text, theme switcher với LocalStorage, thao tác DOM.
+4. **Python 3:** Script `run.py` tự động mở trình duyệt và chạy HTTP Server.
+5. **Công cụ phát triển:** Visual Studio Code, Git CLI, GitHub Repository.
+
+---
 
 ## 🚀 Hướng Dẫn Chạy Website (Chỉ 1 Click)
 
@@ -42,7 +51,7 @@ Nhấp đúp vào file `index.html` để mở xem trên bất kỳ trình duy�
 ```plaintext
 bui-ngoc-ha-profile/
 ├── index.html        # Trang giao diện chính của website profile
-├── styles.css        # Toàn bộ mã định kiểu CSS (Dark/Light mode, Responsive)
+├── styles.css        # Toàn bộ mã định kiểu CSS Đen / Trắng
 ├── script.js         # Logic JavaScript tương tác, animation, toast
 ├── run.py            # File Python tự động bật local server và mở trình duyệt
 ├── run.bat           # Phím tắt chạy 1-click cho người dùng Windows
@@ -50,16 +59,14 @@ bui-ngoc-ha-profile/
 ├── assets/           # Thư mục chứa hình ảnh tài nguyên
 │   └── avatar.jpg    # Ảnh đại diện sinh viên Bùi Ngọc Hà
 ├── .gitignore        # Cấu hình bỏ qua các file tạm của hệ thống
-
+└── README.md
 ```
 
 ---
 
-## 📬 Thông Tin Liên Hệ & Đóng Góp
+## 📬 Thông Tin Liên Hệ
 
 - **Sinh viên:** BÙI NGỌC HÀ
 - **Facebook:** [https://www.facebook.com/profile.php?id=61561300656239](https://www.facebook.com/profile.php?id=61561300656239)
 - **GitHub:** [https://github.com/ha122525-hannie](https://github.com/ha122525-hannie)
 - **Mã nguồn dự án:** [https://github.com/ha122525-hannie/bui-ngoc-ha-profile](https://github.com/ha122525-hannie/bui-ngoc-ha-profile)
-
-*Cảm ơn quý thầy cô và các bạn đã xem bài làm!*

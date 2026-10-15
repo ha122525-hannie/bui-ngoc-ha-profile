@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BÙI NGỌC HÀ | Profile Sinh Viên & Dự Án Lập Trình Web</title>
-    <meta name="description" content="Trang profile cá nhân sinh viên Bùi Ngọc Hà - Tổng hợp kiến thức lập trình Web (HTML, CSS, JS, Python) và bài tập thực hành Git/GitHub.">
+    <title>BÙI NGỌC HÀ | Sinh Viên Ngành Công Nghệ Phần Mềm</title>
+    <meta name="description" content="Trang cá nhân sinh viên Bùi Ngọc Hà - Ngành Công nghệ phần mềm. Tổng hợp kiến thức lập trình Web (HTML, CSS, JavaScript, Python).">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,36 +18,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background Glow Effects -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
-
-    <!-- Navigation Bar -->
+    <!-- Header / Navbar -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#hero" class="nav-brand">
-                <span class="brand-badge"><i class="fa-solid fa-code"></i></span>
-                <span class="brand-text">BÙI NGỌC HÀ<span class="brand-dot">.dev</span></span>
+                <span class="brand-badge"><i class="fa-solid fa-terminal"></i></span>
+                <span class="brand-text">BÙI NGỌC HÀ</span>
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Trang chủ</a>
-                <a href="#btvn" class="nav-link"><i class="fa-solid fa-list-check"></i> BTVN</a>
-                <a href="#skills" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Ngôn ngữ Web</a>
-                <a href="#projects" class="nav-link"><i class="fa-solid fa-cubes"></i> Dự án</a>
-                <a href="#runner" class="nav-link"><i class="fa-brands fa-python"></i> Chạy Local</a>
-                <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Liên hệ</a>
+                <a href="#hero" class="nav-link active">Trang chủ</a>
+                <a href="#about" class="nav-link">Giới thiệu</a>
+                <a href="#skills" class="nav-link">Ngôn ngữ Web</a>
+                <a href="#projects" class="nav-link">Dự án</a>
+                <a href="#runner" class="nav-link">Chạy Local</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
             </nav>
 
             <div class="nav-actions">
-                <button class="theme-toggle-btn" id="themeToggle" aria-label="Đổi giao diện Sáng / Tối" title="Đổi giao diện">
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Đổi giao diện Đen / Trắng" title="Đổi màu giao diện">
                     <i class="fa-solid fa-moon moon-icon"></i>
                     <i class="fa-solid fa-sun sun-icon"></i>
                 </button>
                 <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="btn-github-pill">
                     <i class="fa-brands fa-github"></i>
-                    <span>GitHub Repo</span>
+                    <span>GitHub</span>
                 </a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu di động">
                     <i class="fa-solid fa-bars"></i>
@@ -63,535 +58,369 @@
                 <div class="hero-content">
                     <div class="hero-badge">
                         <span class="status-indicator"></span>
-                        <span>Sinh viên Công nghệ Thông tin • Khát vọng học hỏi</span>
+                        <span>Ngành Công nghệ phần mềm</span>
                     </div>
 
                     <h1 class="hero-title">
-                        Xin chào, mình là <br>
-                        <span class="gradient-text hero-name">BÙI NGỌC HÀ</span>
+                        BÙI NGỌC HÀ
                     </h1>
 
                     <div class="hero-typing-box">
-                        <span class="typing-prefix">Mình học & phát triển: </span>
+                        <span class="typing-prefix">Định hướng: </span>
                         <span class="typing-text" id="typingText"></span>
                         <span class="typing-cursor">|</span>
                     </div>
 
                     <p class="hero-desc">
-                        Chào mừng quý thầy cô và các bạn ghé thăm website cá nhân của em. Đây là dự án đầu tay được thực hiện để hoàn thành 
-                        <strong>Bài tập về nhà (BTVN)</strong>: Cài đặt Visual Studio Code, thực hành ngôn ngữ lập trình, liên kết tài khoản Git/GitHub 
-                        và đẩy dự án đầu tiên lên kho lưu trữ trực tuyến!
+                        Xin chào! Mình là sinh viên <strong>Ngành Công nghệ phần mềm</strong>. 
+                        Website này là không gian cá nhân ghi lại quá trình học tập, trau dồi các ngôn ngữ lập trình web 
+                        và xây dựng các ứng dụng phần mềm đầu tay.
                     </p>
 
                     <div class="hero-cta-group">
-                        <a href="#btvn" class="btn btn-primary">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Xem Báo Cáo BTVN</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="btn btn-facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <i class="fa-brands fa-facebook"></i>
                             <span>Facebook của Hà</span>
                         </a>
+                        <a href="#skills" class="btn btn-outline">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Xem Ngôn Ngữ Web</span>
+                        </a>
                         <a href="#runner" class="btn btn-outline">
-                            <i class="fa-solid fa-play"></i>
-                            <span>Chạy 1 Click (run.py)</span>
+                            <i class="fa-brands fa-python"></i>
+                            <span>Chạy Local (run.py)</span>
                         </a>
                     </div>
 
                     <div class="hero-stats">
                         <div class="stat-card">
-                            <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                            <div class="stat-info">
-                                <span class="stat-value">Sinh Viên</span>
-                                <span class="stat-label">Ngành CNTT</span>
-                            </div>
+                            <span class="stat-value">Ngành</span>
+                            <span class="stat-label">Công nghệ phần mềm</span>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
-                            <div class="stat-info">
-                                <span class="stat-value">100%</span>
-                                <span class="stat-label">Hoàn Thành BTVN</span>
-                            </div>
+                            <span class="stat-value">Chuyên môn</span>
+                            <span class="stat-label">Web & Software Dev</span>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
-                            <div class="stat-info">
-                                <span class="stat-value">4+</span>
-                                <span class="stat-label">Ngôn Ngữ & Công Cụ</span>
-                            </div>
+                            <span class="stat-value">Nền tảng</span>
+                            <span class="stat-label">HTML • CSS • JS • Python</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="hero-visual">
                     <div class="avatar-card-wrapper">
-                        <div class="avatar-glow-ring"></div>
                         <div class="avatar-card">
                             <div class="avatar-img-box">
-                                <img src="assets/avatar.jpg" alt="Avatar Bùi Ngọc Hà" class="avatar-img" id="avatarImg" loading="eager">
-                                <span class="avatar-status-chip">
-                                    <i class="fa-solid fa-circle-dot"></i> Sẵn sàng kết nối
-                                </span>
+                                <img src="assets/avatar.jpg" alt="Avatar Bùi Ngọc Hà" class="avatar-img" id="avatarImg">
                             </div>
                             <div class="avatar-meta">
                                 <h3 class="avatar-name">BÙI NGỌC HÀ</h3>
-                                <p class="avatar-role">Student & Aspiring Software Engineer</p>
+                                <p class="avatar-role">Sinh viên Ngành Công nghệ phần mềm</p>
                                 <div class="avatar-socials">
-                                    <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="social-icon fb" title="Facebook cá nhân">
-                                        <i class="fa-brands fa-facebook"></i>
+                                    <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook cá nhân">
+                                        <i class="fa-brands fa-facebook-f"></i>
                                     </a>
-                                    <a href="https://github.com/ha122525-hannie" target="_blank" rel="noopener noreferrer" class="social-icon git" title="GitHub Profile">
+                                    <a href="https://github.com/ha122525-hannie" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
                                         <i class="fa-brands fa-github"></i>
                                     </a>
-                                    <a href="mailto:contact@buingocha.dev" class="social-icon mail" title="Gửi Email">
+                                    <a href="#contact" class="social-icon" title="Gửi lời nhắn">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Floating Micro Cards -->
-                        <div class="floating-badge badge-top-right">
-                            <i class="fa-brands fa-python python-color"></i>
-                            <div>
-                                <strong>Python 3.9+</strong>
-                                <span>Local Server Ready</span>
-                            </div>
-                        </div>
-                        <div class="floating-badge badge-bottom-left">
-                            <i class="fa-brands fa-git-alt git-color"></i>
-                            <div>
-                                <strong>Git & GitHub</strong>
-                                <span>Deployed Successfully</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BTVN Checklist Section (Mục tiêu bài tập theo đề bài) -->
-        <section class="section btvn-section" id="btvn">
+        <!-- About Me Section -->
+        <section class="section about-section" id="about">
             <div class="container">
-                <div class="section-header text-center">
-                    <div class="section-tag">
-                        <i class="fa-solid fa-clipboard-check"></i>
-                        <span>Nhiệm vụ học tập</span>
-                    </div>
-                    <h2 class="section-title">Kết Quả Thực Hiện <span class="gradient-text">BTVN</span></h2>
-                    <p class="section-desc">
-                        Đối chiếu đầy đủ các yêu cầu trong đề bài tập về nhà của môn học và kết quả triển khai thực tế của Bùi Ngọc Hà.
-                    </p>
-                </div>
-
-                <div class="btvn-grid">
-                    <!-- Task 1 -->
-                    <div class="btvn-card completed">
-                        <div class="btvn-status-badge">
-                            <i class="fa-solid fa-circle-check"></i> Hoàn thành
+                <div class="about-card">
+                    <div class="about-grid">
+                        <div class="about-col">
+                            <div class="section-tag">Giới thiệu bản thân</div>
+                            <h2 class="about-title">Học tập & Đam mê phát triển phần mềm</h2>
+                            <p class="about-p">
+                                Hiện tại em đang theo học <strong>Ngành Công nghệ phần mềm</strong>. 
+                                Mục tiêu của em là nắm vững nền tảng kiến trúc mã nguồn, quy trình thiết kế giao diện web hiện đại 
+                                và rèn luyện kỹ năng giải quyết bài toán thực tế thông qua các dự án phần mềm.
+                            </p>
                         </div>
-                        <div class="btvn-icon-box">
-                            <i class="fa-solid fa-desktop"></i>
-                        </div>
-                        <h3 class="btvn-card-title">1. Cài đặt Visual Studio Code</h3>
-                        <p class="btvn-card-desc">
-                            Đã thiết lập Visual Studio Code làm môi trường phát triển chính, cài đặt các extension hỗ trợ HTML, CSS, JavaScript và Python.
-                        </p>
-                        <div class="btvn-proof">
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> VS Code v1.9x</span>
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> Live Server Ext</span>
-                        </div>
-                    </div>
-
-                    <!-- Task 2 -->
-                    <div class="btvn-card completed">
-                        <div class="btvn-status-badge">
-                            <i class="fa-solid fa-circle-check"></i> Hoàn thành
-                        </div>
-                        <div class="btvn-icon-box">
-                            <i class="fa-brands fa-python"></i>
-                        </div>
-                        <h3 class="btvn-card-title">2. Cài đặt gói công cụ ngôn ngữ</h3>
-                        <p class="btvn-card-desc">
-                            Đã cài đặt môi trường thông dịch Python 3 (gói công cụ cốt lõi) cùng bộ runtime tiêu chuẩn trên máy tính để viết và thực thi code.
-                        </p>
-                        <div class="btvn-proof">
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> Python 3.9+</span>
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> HTTP & Socket Server</span>
-                        </div>
-                    </div>
-
-                    <!-- Task 3 -->
-                    <div class="btvn-card completed">
-                        <div class="btvn-status-badge">
-                            <i class="fa-solid fa-circle-check"></i> Hoàn thành
-                        </div>
-                        <div class="btvn-icon-box">
-                            <i class="fa-solid fa-terminal"></i>
-                        </div>
-                        <h3 class="btvn-card-title">3. Chạy chương trình với ngôn ngữ vừa cài</h3>
-                        <p class="btvn-card-desc">
-                            Xây dựng chương trình <code>run.py</code> chạy local server web, tự động phát hiện port rảnh và mở trình duyệt tự động chỉ với 1 lệnh.
-                        </p>
-                        <div class="btvn-proof">
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> python run.py</span>
-                            <span class="proof-tag"><i class="fa-solid fa-check"></i> Auto Launch Browser</span>
-                        </div>
-                    </div>
-
-                    <!-- Task 4 & 5 -->
-                    <div class="btvn-card completed highlight">
-                        <div class="btvn-status-badge">
-                            <i class="fa-solid fa-circle-check"></i> Hoàn thành
-                        </div>
-                        <div class="btvn-icon-box">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-                        <h3 class="btvn-card-title">4 & 5. Tạo Git, liên kết GitHub & đẩy code</h3>
-                        <p class="btvn-card-desc">
-                            Khởi tạo tài khoản GitHub <code>ha122525-hannie</code>, tạo kho lưu trữ <code>bui-ngoc-ha-profile</code> và đồng bộ mã nguồn lên đám mây.
-                        </p>
-                        <div class="btvn-proof">
-                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="proof-link">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Xem Repo trên GitHub
-                            </a>
+                        <div class="about-col">
+                            <div class="info-list">
+                                <div class="info-row">
+                                    <span class="info-label">Họ và tên:</span>
+                                    <span class="info-val">BÙI NGỌC HÀ</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Ngành học:</span>
+                                    <span class="info-val">Công nghệ phần mềm (Software Engineering)</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Kỹ năng chính:</span>
+                                    <span class="info-val">HTML5, CSS3, JavaScript, Python, Git/GitHub</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Môi trường:</span>
+                                    <span class="info-val">Visual Studio Code</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Mạng xã hội:</span>
+                                    <span class="info-val"><a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="text-underline">facebook.com/profile.php?id=61561300656239</a></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Web Languages & Tech Stack Section -->
+        <!-- Web Languages Section -->
         <section class="section skills-section" id="skills">
             <div class="container">
                 <div class="section-header text-center">
-                    <div class="section-tag">
-                        <i class="fa-solid fa-layer-group"></i>
-                        <span>Kỹ thuật sử dụng</span>
-                    </div>
-                    <h2 class="section-title">Các Ngôn Ngữ Web & <span class="gradient-text">Công Cụ Sử Dụng</span></h2>
+                    <div class="section-tag">Kỹ năng công nghệ</div>
+                    <h2 class="section-title">Các Ngôn Ngữ Web & Công Cụ Sử Dụng</h2>
                     <p class="section-desc">
-                        Theo yêu cầu đề bài, đây là danh sách chi tiết các ngôn ngữ web và công cụ công nghệ mà em đã sử dụng để xây dựng website này:
+                        Danh sách các ngôn ngữ lập trình web và công cụ em đang học tập và ứng dụng trong các dự án phần mềm:
                     </p>
                 </div>
 
                 <div class="skills-grid">
                     <!-- HTML5 -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper html-bg">
-                                <i class="fa-brands fa-html5"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>HTML5</h3>
-                                <span class="skill-category">Cấu trúc Web & Ngữ nghĩa</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">01</span>
+                            <span class="skill-name">HTML5</span>
                         </div>
-                        <p class="skill-description">
-                            Xây dựng bộ khung website chuẩn SEO, sử dụng các thẻ ngữ nghĩa (Semantic HTML5: header, nav, main, section, footer) giúp trình duyệt và công cụ tìm kiếm dễ hiểu nội dung.
+                        <h3 class="skill-heading">Cấu Trúc Web & Ngữ Nghĩa</h3>
+                        <p class="skill-body">
+                            Sử dụng các thẻ chuẩn Semantic HTML5 để xây dựng bộ khung chuẩn SEO, tối ưu khả năng đọc của trình duyệt và khả năng tiếp cận người dùng.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> Chuẩn W3C</span>
-                            <span><i class="fa-solid fa-check"></i> Semantic Tags</span>
-                            <span><i class="fa-solid fa-check"></i> Responsive Meta</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Cơ bản & Đủ dùng</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                        <div class="skill-pills">
+                            <span>Semantic Tags</span>
+                            <span>Chuẩn W3C</span>
+                            <span>SEO Structure</span>
                         </div>
                     </div>
 
                     <!-- CSS3 -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper css-bg">
-                                <i class="fa-brands fa-css3-alt"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>CSS3</h3>
-                                <span class="skill-category">Giao diện & Trực quan hóa</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">02</span>
+                            <span class="skill-name">CSS3</span>
                         </div>
-                        <p class="skill-description">
-                            Tạo giao diện hiện đại với phong cách Glassmorphism, hiệu ứng chuyển màu sống động, hỗ trợ Dark/Light Theme linh hoạt và tương thích hoàn hảo mọi thiết bị di động, tablet, máy tính.
+                        <h3 class="skill-heading">Giao Diện & Responsive</h3>
+                        <p class="skill-body">
+                            Tạo giao diện tối giản đen trắng thanh lịch, hiệu ứng chuyển đổi Dark/Light mode bằng CSS Variables, bố cục Flexbox và Grid tương thích mọi màn hình.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> Flexbox & Grid</span>
-                            <span><i class="fa-solid fa-check"></i> CSS Variables</span>
-                            <span><i class="fa-solid fa-check"></i> Glassmorphism</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Trực quan & Đẹp mắt</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                        <div class="skill-pills">
+                            <span>Dark / Light Mode</span>
+                            <span>Flexbox & Grid</span>
+                            <span>CSS Variables</span>
                         </div>
                     </div>
 
                     <!-- JavaScript -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper js-bg">
-                                <i class="fa-brands fa-js"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>JavaScript (ES6+)</h3>
-                                <span class="skill-category">Tương tác & Logic Web</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">03</span>
+                            <span class="skill-name">JavaScript (ES6+)</span>
                         </div>
-                        <p class="skill-description">
-                            Xử lý tương tác người dùng, hiệu ứng gõ phím chân thực (Typewriter Effect), chuyển đổi chủ đề màu sắc mượt mà, lưu trạng thái bằng LocalStorage và hiển thị thông báo Toast.
+                        <h3 class="skill-heading">Tương Tác & Logic Web</h3>
+                        <p class="skill-body">
+                            Xử lý logic tương tác người dùng, hiệu ứng gõ chữ Typewriter, lưu trạng thái theme vào LocalStorage và các thao tác DOM mượt mà.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> DOM Manipulation</span>
-                            <span><i class="fa-solid fa-check"></i> LocalStorage API</span>
-                            <span><i class="fa-solid fa-check"></i> Asynchronous Event</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Linh hoạt & Tương tác</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                        <div class="skill-pills">
+                            <span>DOM Manipulation</span>
+                            <span>LocalStorage API</span>
+                            <span>Typewriter Effect</span>
                         </div>
                     </div>
 
                     <!-- Python -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper py-bg">
-                                <i class="fa-brands fa-python"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>Python 3</h3>
-                                <span class="skill-category">Script Chạy Local & Tự động hóa</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">04</span>
+                            <span class="skill-name">Python 3</span>
                         </div>
-                        <p class="skill-description">
-                            Sử dụng thư viện chuẩn của Python (<code>http.server</code>, <code>webbrowser</code>, <code>socket</code>) để viết file <code>run.py</code>. Chỉ cần nhấp đúp hoặc gõ lệnh là trang web tự động chạy local trên máy.
+                        <h3 class="skill-heading">Script Tự Động Hóa & Server</h3>
+                        <p class="skill-body">
+                            Ngôn ngữ cốt lõi dùng để xây dựng file <code>run.py</code>. Tự động khởi tạo web server cục bộ và tự bật trình duyệt mặc định chỉ với 1 lệnh duy nhất.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> Built-in HTTP Server</span>
-                            <span><i class="fa-solid fa-check"></i> Auto Open Browser</span>
-                            <span><i class="fa-solid fa-check"></i> Zero Dependencies</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Tự động hóa 1-Click</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 82%;"></div></div>
+                        <div class="skill-pills">
+                            <span>Built-in HTTP Server</span>
+                            <span>Auto Webbrowser</span>
+                            <span>Automation Script</span>
                         </div>
                     </div>
 
-                    <!-- Visual Studio Code -->
+                    <!-- VS Code -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper vscode-bg">
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>Visual Studio Code</h3>
-                                <span class="skill-category">Môi trường phát triển (IDE)</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">05</span>
+                            <span class="skill-name">Visual Studio Code</span>
                         </div>
-                        <p class="skill-description">
-                            Công cụ soạn thảo mã nguồn chính theo đúng yêu cầu BTVN. Tích hợp terminal, highlight code, format tự động và tiện ích quản lý Git trực quan.
+                        <h3 class="skill-heading">Môi Trường Lập Trình</h3>
+                        <p class="skill-body">
+                            Trình soạn thảo mã nguồn chính, tích hợp terminal, quản lý extension và hỗ trợ debug code nhanh chóng.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> Editor chuẩn quốc tế</span>
-                            <span><i class="fa-solid fa-check"></i> Integrated Terminal</span>
-                            <span><i class="fa-solid fa-check"></i> Git Extension</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Thành thạo công cụ</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                        <div class="skill-pills">
+                            <span>Code Editor</span>
+                            <span>Integrated Terminal</span>
+                            <span>Extensions</span>
                         </div>
                     </div>
 
                     <!-- Git & GitHub -->
                     <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-wrapper git-bg">
-                                <i class="fa-brands fa-git-alt"></i>
-                            </div>
-                            <div class="skill-title-group">
-                                <h3>Git & GitHub</h3>
-                                <span class="skill-category">Quản lý phiên bản & Triển khai</span>
-                            </div>
+                        <div class="skill-top">
+                            <span class="skill-index">06</span>
+                            <span class="skill-name">Git & GitHub</span>
                         </div>
-                        <p class="skill-description">
-                            Thực hiện đầy đủ chu trình: khởi tạo repo (git init), lưu trữ lịch sử sửa đổi (commit), liên kết remote repository và đẩy mã nguồn (git push) lên GitHub thông qua Token bảo mật.
+                        <h3 class="skill-heading">Quản Lý Phiên Bản</h3>
+                        <p class="skill-body">
+                            Quản lý lịch sử mã nguồn bằng Git CLI, kết nối remote repository và đồng bộ dự án lên kho lưu trữ GitHub an toàn.
                         </p>
-                        <div class="skill-features">
-                            <span><i class="fa-solid fa-check"></i> Version Control</span>
-                            <span><i class="fa-solid fa-check"></i> GitHub Repository</span>
-                            <span><i class="fa-solid fa-check"></i> Personal Access Token</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="progress-info">
-                                <span>Mức độ nắm vững</span>
-                                <span class="progress-pct">Chuẩn quy trình</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                        <div class="skill-pills">
+                            <span>Version Control</span>
+                            <span>Git Commit & Push</span>
+                            <span>Remote Repo</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interactive Code Snippet Preview -->
+                <!-- Code Snippet Box (Monochrome) -->
                 <div class="code-preview-box">
                     <div class="code-preview-header">
                         <div class="code-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
                         </div>
                         <div class="code-tabs">
-                            <button class="code-tab active" data-target="code-python">
-                                <i class="fa-brands fa-python"></i> run.py
-                            </button>
-                            <button class="code-tab" data-target="code-html">
-                                <i class="fa-brands fa-html5"></i> index.html
-                            </button>
-                            <button class="code-tab" data-target="code-js">
-                                <i class="fa-brands fa-js"></i> script.js
-                            </button>
+                            <button class="code-tab active" data-target="code-python">run.py</button>
+                            <button class="code-tab" data-target="code-html">index.html</button>
+                            <button class="code-tab" data-target="code-js">script.js</button>
                         </div>
-                        <button class="btn-copy-code" id="btnCopyCode" title="Sao chép đoạn code">
-                            <i class="fa-regular fa-copy"></i> Copy
+                        <button class="btn-copy-code" id="btnCopyCode" title="Sao chép mã nguồn">
+                            <i class="fa-regular fa-copy"></i> Sao chép
                         </button>
                     </div>
 
                     <div class="code-preview-body">
                         <!-- Python Snippet -->
-                        <pre class="code-block active" id="code-python"><code><span class="c-keyword">import</span> http.server
-<span class="c-keyword">import</span> socketserver
-<span class="c-keyword">import</span> webbrowser
-<span class="c-keyword">import</span> sys
+                        <pre class="code-block active" id="code-python"><code>import http.server
+import socketserver
+import webbrowser
 
-PORT = <span class="c-number">8000</span>
+PORT = 8000
 Handler = http.server.SimpleHTTPRequestHandler
 
-<span class="c-keyword">print</span>(<span class="c-string">"🚀 BÙI NGỌC HÀ - Khởi động Web Server Local..."</span>)
-<span class="c-keyword">print</span>(<span class="c-string">f"🌐 Đang mở trình duyệt tại: http://localhost:{PORT}"</span>)
+print("🚀 BÙI NGỌC HÀ - Khởi động Web Server Local...")
+webbrowser.open(f"http://localhost:{PORT}")
 
-<span class="c-comment"># Tự động mở trình duyệt sau khi chạy</span>
-webbrowser.open(<span class="c-string">f"http://localhost:{PORT}"</span>)
-
-<span class="c-keyword">with</span> socketserver.TCPServer((<span class="c-string">""</span>, PORT), Handler) <span class="c-keyword">as</span> httpd:
-    <span class="c-keyword">try</span>:
-        httpd.serve_forever()
-    <span class="c-keyword">except</span> KeyboardInterrupt:
-        <span class="c-keyword">print</span>(<span class="c-string">"\n🛑 Đã tắt server!"</span>)
-        sys.exit(<span class="c-number">0</span>)</code></pre>
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    httpd.serve_forever()</code></pre>
 
                         <!-- HTML Snippet -->
-                        <pre class="code-block" id="code-html"><code><span class="c-comment">&lt;!-- Cấu trúc Profile Sinh Viên BÙI NGỌC HÀ --&gt;</span>
-<span class="c-tag">&lt;section</span> <span class="c-attr">class</span>=<span class="c-string">"student-profile"</span><span class="c-tag">&gt;</span>
-    <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-string">"profile-header"</span><span class="c-tag">&gt;</span>
-        <span class="c-tag">&lt;h1&gt;</span>BÙI NGỌC HÀ<span class="c-tag">&lt;/h1&gt;</span>
-        <span class="c-tag">&lt;p&gt;</span>Sinh viên Công nghệ Thông tin<span class="c-tag">&lt;/p&gt;</span>
-        <span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-string">"https://www.facebook.com/profile.php?id=61561300656239"</span><span class="c-tag">&gt;</span>
-            Facebook Cá Nhân
-        <span class="c-tag">&lt;/a&gt;</span>
-    <span class="c-tag">&lt;/div&gt;</span>
-<span class="c-tag">&lt;/section&gt;</span></code></pre>
+                        <pre class="code-block" id="code-html"><code>&lt;!-- Profile Sinh Viên BÙI NGỌC HÀ --&gt;
+&lt;section class="profile"&gt;
+    &lt;h1&gt;BÙI NGỌC HÀ&lt;/h1&gt;
+    &lt;p&gt;Sinh viên Ngành Công nghệ phần mềm&lt;/p&gt;
+    &lt;a href="https://www.facebook.com/profile.php?id=61561300656239"&gt;
+        Facebook Cá Nhân
+    &lt;/a&gt;
+&lt;/section&gt;</code></pre>
 
                         <!-- JS Snippet -->
-                        <pre class="code-block" id="code-js"><code><span class="c-comment">// Hiệu ứng tương tác & chuyển đổi giao diện Sáng / Tối</span>
-<span class="c-keyword">const</span> themeToggle = document.getElementById(<span class="c-string">'themeToggle'</span>);
-themeToggle.addEventListener(<span class="c-string">'click'</span>, () => {
-    <span class="c-keyword">const</span> currentTheme = document.documentElement.getAttribute(<span class="c-string">'data-theme'</span>);
-    <span class="c-keyword">const</span> newTheme = currentTheme === <span class="c-string">'dark'</span> ? <span class="c-string">'light'</span> : <span class="c-string">'dark'</span>;
-    document.documentElement.setAttribute(<span class="c-string">'data-theme'</span>, newTheme);
-    localStorage.setItem(<span class="c-string">'theme'</span>, newTheme);
+                        <pre class="code-block" id="code-js"><code>// Chuyển đổi giao diện Đen / Trắng
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const target = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', target);
+    localStorage.setItem('theme', target);
 });</code></pre>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Python Local Runner Showcase -->
+        <!-- Python Local Runner Section -->
         <section class="section runner-section" id="runner">
             <div class="container">
                 <div class="runner-card">
                     <div class="runner-content">
-                        <div class="section-tag">
-                            <i class="fa-solid fa-bolt"></i>
-                            <span>Tính năng 1-Click</span>
-                        </div>
-                        <h2 class="runner-title">Chạy Toàn Bộ Website Local <br><span class="gradient-text">Chỉ Với 1 Click Bằng Python</span></h2>
+                        <div class="section-tag">Khởi chạy 1-Click</div>
+                        <h2 class="runner-title">Chạy Toàn Bộ Website Local Bằng Python</h2>
                         <p class="runner-desc">
-                            Đáp ứng yêu cầu của anh: Em đã đóng gói file Python <code>run.py</code>. 
-                            Chỉ cần ấn 1 cái là server tự bật cổng <strong>http://localhost:8000</strong> và tự mở trình duyệt lên màn hình ngay lập tức!
+                            Chỉ cần 1 lệnh hoặc 1 lần nhấp đúp file <code>run.py</code>, 
+                            hệ thống tự tạo web server cục bộ và tự mở trình duyệt web lên màn hình ngay lập tức.
                         </p>
                         
-                        <div class="runner-instructions">
-                            <div class="instruction-step">
+                        <div class="runner-steps">
+                            <div class="runner-step">
                                 <span class="step-num">1</span>
-                                <div class="step-detail">
-                                    <strong>Mở Terminal / VS Code:</strong>
-                                    <span>Điều hướng vào thư mục dự án <code>bui-ngoc-ha-profile</code></span>
+                                <div class="step-text">
+                                    <strong>Mở thư mục dự án:</strong>
+                                    <span>Điều hướng vào thư mục <code>bui-ngoc-ha-profile</code></span>
                                 </div>
                             </div>
-                            <div class="instruction-step">
+                            <div class="runner-step">
                                 <span class="step-num">2</span>
-                                <div class="step-detail">
-                                    <strong>Gõ lệnh hoặc chạy file:</strong>
+                                <div class="step-text">
+                                    <strong>Chạy lệnh Python:</strong>
                                     <div class="cli-box">
                                         <code>python3 run.py</code>
-                                        <button class="cli-copy-btn" id="copyCliBtn" title="Sao chép lệnh"><i class="fa-regular fa-copy"></i></button>
+                                        <button class="cli-copy-btn" id="copyCliBtn" title="Sao chép"><i class="fa-regular fa-copy"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="instruction-step">
+                            <div class="runner-step">
                                 <span class="step-num">3</span>
-                                <div class="step-detail">
-                                    <strong>Tận hưởng:</strong>
-                                    <span>Trang web tự động xuất hiện trên Chrome / Edge / Safari của bạn!</span>
+                                <div class="step-text">
+                                    <strong>Tự động mở:</strong>
+                                    <span>Trang web sẽ tự động hiển thị tại <code>http://localhost:8000</code></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="runner-buttons">
+                        <div class="runner-actions">
                             <button class="btn btn-primary" id="btnTestInteractive">
                                 <i class="fa-solid fa-play"></i>
-                                <span>Thử nghiệm hiệu ứng Demo</span>
+                                <span>Thử nghiệm Terminal Demo</span>
                             </button>
                             <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile/blob/main/run.py" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                                <i class="fa-solid fa-file-code"></i>
-                                <span>Xem mã nguồn run.py</span>
+                                <i class="fa-solid fa-code"></i>
+                                <span>Xem file run.py</span>
                             </a>
                         </div>
                     </div>
 
-                    <div class="runner-terminal-wrapper">
+                    <div class="runner-terminal">
                         <div class="terminal-window">
-                            <div class="terminal-bar">
+                            <div class="terminal-top">
                                 <div class="code-dots">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
                                 </div>
-                                <span class="terminal-title"><i class="fa-solid fa-terminal"></i> Terminal - Python Server</span>
+                                <span class="terminal-label">Terminal - run.py</span>
                             </div>
                             <div class="terminal-screen" id="terminalScreen">
-                                <div class="t-line"><span class="t-user">mac@laptop</span>:<span class="t-path">~/bui-ngoc-ha-profile</span>$ python3 run.py</div>
-                                <div class="t-line t-cyan">====================================================</div>
-                                <div class="t-line t-yellow">  🚀 BÙI NGỌC HÀ - LOCAL WEB PROFILE SERVER  </div>
-                                <div class="t-line t-cyan">====================================================</div>
-                                <div class="t-line t-green">  ✓ Trạng thái: Server đang hoạt động tốt</div>
-                                <div class="t-line t-white">  🌐 Địa chỉ Web: <a href="http://localhost:8000" target="_blank" class="t-link">http://localhost:8000</a></div>
-                                <div class="t-line t-white">  📱 Tự động mở trình duyệt mặc định... [XONG]</div>
-                                <div class="t-line t-gray">  💡 Nhấn Ctrl + C bất cứ lúc nào để dừng server</div>
-                                <div class="t-line"><span class="t-prompt">&gt;</span> <span class="t-blink">●</span> Đang lắng nghe các kết nối từ máy của bạn...</div>
+                                <div class="t-line">$ python3 run.py</div>
+                                <div class="t-line">====================================================</div>
+                                <div class="t-line">  BÙI NGỌC HÀ - LOCAL WEB PROFILE SERVER  </div>
+                                <div class="t-line">====================================================</div>
+                                <div class="t-line">[OK] Server đang hoạt động tốt</div>
+                                <div class="t-line">[URL] http://localhost:8000</div>
+                                <div class="t-line">[BROWSER] Tự động mở trình duyệt mặc định... [XONG]</div>
+                                <div class="t-line">[INFO] Nhấn Ctrl + C để dừng server</div>
+                                <div class="t-line">&gt; Đang lắng nghe các kết nối từ máy của bạn...</div>
                             </div>
                         </div>
                     </div>
@@ -603,93 +432,75 @@ themeToggle.addEventListener(<span class="c-string">'click'</span>, () => {
         <section class="section projects-section" id="projects">
             <div class="container">
                 <div class="section-header text-center">
-                    <div class="section-tag">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span>Sản phẩm & Bài tập</span>
-                    </div>
-                    <h2 class="section-title">Các Dự Án & <span class="gradient-text">Sản Phẩm Đầu Tay</span></h2>
+                    <div class="section-tag">Sản phẩm thực tế</div>
+                    <h2 class="section-title">Các Dự Án & Bài Tập Đã Làm</h2>
                     <p class="section-desc">
-                        Những bước đi đầu tiên trong hành trình lập trình của sinh viên Bùi Ngọc Hà:
+                        Một số dự án đầu tay trong quá trình học tập Ngành Công nghệ phần mềm:
                     </p>
                 </div>
 
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card">
-                        <div class="project-thumb">
-                            <div class="thumb-badge">Chính thức</div>
-                            <div class="thumb-icon"><i class="fa-solid fa-address-card"></i></div>
-                            <div class="thumb-overlay">
-                                <span class="overlay-text"><i class="fa-solid fa-eye"></i> Đang xem dự án này</span>
-                            </div>
+                        <div class="project-header">
+                            <span class="project-badge">Dự án chính</span>
+                            <span class="project-year">2026</span>
                         </div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span class="ptag">HTML5</span>
-                                <span class="ptag">CSS3</span>
-                                <span class="ptag">JavaScript</span>
-                                <span class="ptag">Python</span>
-                            </div>
-                            <h3 class="project-title">Website Profile Cá Nhân Bùi Ngọc Hà</h3>
-                            <p class="project-desc">
-                                Trang web cá nhân đại diện cho sinh viên, tích hợp dark mode, danh sách ngôn ngữ web sử dụng, liên kết mạng xã hội và file runner Python tự động.
-                            </p>
-                            <div class="project-links">
-                                <a href="#hero" class="btn-project-link primary"><i class="fa-solid fa-house"></i> Trang chủ</a>
-                                <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary"><i class="fa-brands fa-github"></i> Mã nguồn</a>
-                            </div>
+                        <h3 class="project-title">Website Profile Cá Nhân Bùi Ngọc Hà</h3>
+                        <p class="project-desc">
+                            Trang cá nhân phong cách đen trắng tối giản, hỗ trợ chuyển đổi theme, liệt kê đầy đủ ngôn ngữ web và tích hợp script chạy tự động.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#hero" class="project-btn primary">Xem trang</a>
+                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="project-btn secondary">Mã nguồn</a>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="project-card">
-                        <div class="project-thumb py-thumb">
-                            <div class="thumb-badge">Tự động hóa</div>
-                            <div class="thumb-icon"><i class="fa-brands fa-python"></i></div>
-                            <div class="thumb-overlay">
-                                <span class="overlay-text"><i class="fa-solid fa-bolt"></i> 1-Click Server</span>
-                            </div>
+                        <div class="project-header">
+                            <span class="project-badge">Tự động hóa</span>
+                            <span class="project-year">2026</span>
                         </div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span class="ptag">Python 3</span>
-                                <span class="ptag">HTTP Server</span>
-                                <span class="ptag">Webbrowser</span>
-                            </div>
-                            <h3 class="project-title">Python 1-Click Auto Local Launcher</h3>
-                            <p class="project-desc">
-                                Bộ công cụ khởi động website nội bộ, tự chọn cổng trống (8000 -> 8080), tự kích hoạt ứng dụng duyệt web và thông báo trạng thái qua terminal có màu sắc đẹp mắt.
-                            </p>
-                            <div class="project-links">
-                                <a href="#runner" class="btn-project-link primary"><i class="fa-solid fa-terminal"></i> Xem lệnh</a>
-                                <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile/blob/main/run.py" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary"><i class="fa-solid fa-code"></i> File run.py</a>
-                            </div>
+                        <h3 class="project-title">Python 1-Click Local Web Launcher</h3>
+                        <p class="project-desc">
+                            Công cụ viết bằng Python chuẩn (không phụ thuộc package ngoài), tự động kiểm tra port mạng rảnh và mở trình duyệt web.
+                        </p>
+                        <div class="project-tags">
+                            <span>Python 3</span>
+                            <span>HTTP Server</span>
+                            <span>Socket</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#runner" class="project-btn primary">Xem lệnh</a>
+                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile/blob/main/run.py" target="_blank" rel="noopener noreferrer" class="project-btn secondary">run.py</a>
                         </div>
                     </div>
 
                     <!-- Project 3 -->
                     <div class="project-card">
-                        <div class="project-thumb git-thumb">
-                            <div class="thumb-badge">BTVN</div>
-                            <div class="thumb-icon"><i class="fa-solid fa-code-merge"></i></div>
-                            <div class="thumb-overlay">
-                                <span class="overlay-text"><i class="fa-brands fa-git-alt"></i> Git Ready</span>
-                            </div>
+                        <div class="project-header">
+                            <span class="project-badge">Mã nguồn</span>
+                            <span class="project-year">2026</span>
                         </div>
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span class="ptag">Git</span>
-                                <span class="ptag">GitHub</span>
-                                <span class="ptag">VS Code</span>
-                            </div>
-                            <h3 class="project-title">Quy Trình Triển Khai Mã Nguồn Chuẩn</h3>
-                            <p class="project-desc">
-                                Thiết lập cấu trúc thư mục tiêu chuẩn, file README hướng dẫn chi tiết, file .gitignore loại bỏ file tạm và đẩy lên GitHub bằng Personal Access Token an toàn.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="btn-project-link primary"><i class="fa-brands fa-github"></i> Xem GitHub</a>
-                                <a href="#btvn" class="btn-project-link secondary"><i class="fa-solid fa-clipboard-check"></i> Checklist</a>
-                            </div>
+                        <h3 class="project-title">Kho Lưu Trữ & Triển Khai GitHub</h3>
+                        <p class="project-desc">
+                            Hệ thống quản lý phiên bản với Git CLI, kết nối kho lưu trữ từ xa và triển khai tự động qua GitHub Pages.
+                        </p>
+                        <div class="project-tags">
+                            <span>Git CLI</span>
+                            <span>GitHub Pages</span>
+                            <span>Version Control</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="project-btn primary">Xem GitHub</a>
+                            <a href="https://ha122525-hannie.github.io/bui-ngoc-ha-profile/" target="_blank" rel="noopener noreferrer" class="project-btn secondary">Bản trực tiếp</a>
                         </div>
                     </div>
                 </div>
@@ -701,65 +512,61 @@ themeToggle.addEventListener(<span class="c-string">'click'</span>, () => {
             <div class="container">
                 <div class="contact-card">
                     <div class="contact-left">
-                        <div class="section-tag">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Kênh trao đổi</span>
-                        </div>
-                        <h2 class="contact-title">Kết Nối Với <br><span class="gradient-text">BÙI NGỌC HÀ</span></h2>
+                        <div class="section-tag">Kết nối</div>
+                        <h2 class="contact-title">Liên Hệ Với <br>BÙI NGỌC HÀ</h2>
                         <p class="contact-desc">
-                            Quý thầy cô và các bạn có thể liên hệ trực tiếp với em qua Facebook cá nhân hoặc theo dõi các bài tập lập trình mới nhất trên GitHub!
+                            Bạn có thể liên hệ trực tiếp với mình qua Facebook cá nhân hoặc theo dõi các dự án mới nhất trên GitHub:
                         </p>
 
                         <div class="contact-items">
                             <!-- Facebook (Bắt buộc theo yêu cầu) -->
-                            <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="contact-item fb-item">
-                                <div class="c-icon"><i class="fa-brands fa-facebook"></i></div>
+                            <a href="https://www.facebook.com/profile.php?id=61561300656239" target="_blank" rel="noopener noreferrer" class="contact-item">
+                                <div class="c-icon"><i class="fa-brands fa-facebook-f"></i></div>
                                 <div class="c-info">
-                                    <span class="c-label">Facebook Cá Nhân (Chính thức)</span>
+                                    <span class="c-label">Facebook Cá Nhân:</span>
                                     <span class="c-value">facebook.com/profile.php?id=61561300656239</span>
                                 </div>
-                                <div class="c-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                                <i class="fa-solid fa-arrow-up-right-from-square c-arrow"></i>
                             </a>
 
                             <!-- GitHub -->
-                            <a href="https://github.com/ha122525-hannie" target="_blank" rel="noopener noreferrer" class="contact-item git-item">
+                            <a href="https://github.com/ha122525-hannie" target="_blank" rel="noopener noreferrer" class="contact-item">
                                 <div class="c-icon"><i class="fa-brands fa-github"></i></div>
                                 <div class="c-info">
-                                    <span class="c-label">GitHub Sinh Viên</span>
+                                    <span class="c-label">GitHub:</span>
                                     <span class="c-value">github.com/ha122525-hannie</span>
                                 </div>
-                                <div class="c-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                                <i class="fa-solid fa-arrow-up-right-from-square c-arrow"></i>
                             </a>
 
-                            <!-- Repo Bài Tập -->
-                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="contact-item repo-item">
-                                <div class="c-icon"><i class="fa-solid fa-box-archive"></i></div>
+                            <!-- Repository -->
+                            <a href="https://github.com/ha122525-hannie/bui-ngoc-ha-profile" target="_blank" rel="noopener noreferrer" class="contact-item">
+                                <div class="c-icon"><i class="fa-solid fa-code-branch"></i></div>
                                 <div class="c-info">
-                                    <span class="c-label">Link Nộp Bài Tập Về Nhà</span>
-                                    <span class="c-value">ha122525-hannie/bui-ngoc-ha-profile</span>
+                                    <span class="c-label">Kho Lưu Trữ Dự Án:</span>
+                                    <span class="c-value">bui-ngoc-ha-profile</span>
                                 </div>
-                                <div class="c-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                                <i class="fa-solid fa-arrow-up-right-from-square c-arrow"></i>
                             </a>
                         </div>
                     </div>
 
                     <div class="contact-right">
                         <div class="feedback-card">
-                            <h3 class="feedback-title"><i class="fa-regular fa-comment-dots"></i> Gửi Tin Nhắn Cho Hà</h3>
-                            <p class="feedback-subtitle">Lời nhận xét, góp ý từ thầy cô và bạn bè là động lực lớn cho em hoàn thiện hơn.</p>
+                            <h3 class="feedback-title">Gửi Lời Nhắn</h3>
+                            <p class="feedback-subtitle">Để lại lời nhắn hoặc nhận xét để mình cải thiện các dự án nhé!</p>
                             
                             <form id="contactForm" class="contact-form">
                                 <div class="form-group">
-                                    <label for="senderName"><i class="fa-regular fa-user"></i> Tên của bạn / Thầy cô:</label>
-                                    <input type="text" id="senderName" placeholder="Ví dụ: Thầy Hoàng / Bạn Nam..." required>
+                                    <label for="senderName">Họ và tên của bạn:</label>
+                                    <input type="text" id="senderName" placeholder="Nhập tên của bạn..." required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="senderMsg"><i class="fa-regular fa-message"></i> Lời nhắn hoặc nhận xét:</label>
-                                    <textarea id="senderMsg" rows="4" placeholder="Nhập nhận xét hoặc lời động viên..." required></textarea>
+                                    <label for="senderMsg">Lời nhắn:</label>
+                                    <textarea id="senderMsg" rows="4" placeholder="Nhập nội dung tin nhắn..." required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block" id="btnSubmitForm">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Gửi Lời Nhắn</span>
+                                    <span>Gửi Tin Nhắn</span>
                                 </button>
                             </form>
                         </div>
@@ -774,7 +581,7 @@ themeToggle.addEventListener(<span class="c-string">'click'</span>, () => {
         <div class="container footer-container">
             <div class="footer-left">
                 <span class="footer-logo">BÙI NGỌC HÀ</span>
-                <p class="footer-text">Website Profile Sinh Viên - Bài tập về nhà Visual Studio Code & Git/GitHub</p>
+                <p class="footer-text">Sinh viên Ngành Công nghệ phần mềm</p>
             </div>
             <div class="footer-links">
                 <a href="#hero">Về đầu trang</a>
@@ -789,8 +596,7 @@ themeToggle.addEventListener(<span class="c-string">'click'</span>, () => {
 
     <!-- Toast Notification -->
     <div class="toast-notification" id="toastNotification">
-        <div class="toast-icon" id="toastIcon"><i class="fa-solid fa-circle-check"></i></div>
-        <div class="toast-message" id="toastMessage">Thông báo mẫu!</div>
+        <div class="toast-message" id="toastMessage">Thông báo!</div>
     </div>
 
     <!-- Scripts -->

@@ -1,6 +1,6 @@
 /**
- * BÙI NGỌC HÀ - JAVASCRIPT LOGIC
- * Dynamic Typewriter, Dual Theme Toggle, Code Switcher, Interactive Terminal & Toast
+ * BÙI NGỌC HÀ - JAVASCRIPT LOGIC (MINIMALIST MONOCHROME)
+ * Typewriter, Theme Toggle (Black / White), Code Switcher, Copy & Toast
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,108 +14,86 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollSpy();
 });
 
-/* ==========================================================================
-   1. Theme Management (Dark / Light Theme)
-   ========================================================================== */
+/* 1. Theme Management (Dark / Light) */
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
     if (!themeToggle) return;
 
-    // Check saved theme or system preference
-    const savedTheme = localStorage.getItem('ha_profile_theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'dark');
-    }
+    const savedTheme = localStorage.getItem('ha_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
 
     themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('ha_profile_theme', newTheme);
-        showToast(newTheme === 'dark' ? '🌙 Đã chuyển sang giao diện Tối' : '☀️ Đã chuyển sang giao diện Sáng');
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const target = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', target);
+        localStorage.setItem('ha_theme', target);
+        showToast(target === 'dark' ? 'Giao diện Tối' : 'Giao diện Sáng');
     });
 }
 
-/* ==========================================================================
-   2. Dynamic Typewriter Effect
-   ========================================================================== */
+/* 2. Typewriter Effect */
 function initTypewriter() {
-    const typingElement = document.getElementById('typingText');
-    if (!typingElement) return;
+    const el = document.getElementById('typingText');
+    if (!el) return;
 
     const words = [
-        'HTML5, CSS3 & JavaScript 🚀',
-        'Python 3 Backend & Scripts 🐍',
-        'Quy trình Git & GitHub Chuẩn 💻',
-        'Visual Studio Code Editor ⚡',
-        'Định hướng Kỹ sư Web Full-stack 🎓'
+        'Ngành Công nghệ phần mềm',
+        'Lập trình Web (HTML • CSS • JS)',
+        'Python Backend & Automation',
+        'Kỹ sư phần mềm tương lai'
     ];
 
-    let wordIndex = 0;
-    let charIndex = 0;
+    let wordIdx = 0;
+    let charIdx = 0;
     let isDeleting = false;
-    const typeSpeed = 80;
-    const deleteSpeed = 40;
-    const delayBetweenWords = 1800;
 
-    function type() {
-        const currentWord = words[wordIndex];
-
+    function tick() {
+        const current = words[wordIdx];
         if (isDeleting) {
-            typingElement.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
+            el.textContent = current.substring(0, charIdx - 1);
+            charIdx--;
         } else {
-            typingElement.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
+            el.textContent = current.substring(0, charIdx + 1);
+            charIdx++;
         }
 
-        let nextSpeed = isDeleting ? deleteSpeed : typeSpeed;
+        let speed = isDeleting ? 35 : 75;
 
-        if (!isDeleting && charIndex === currentWord.length) {
-            nextSpeed = delayBetweenWords;
+        if (!isDeleting && charIdx === current.length) {
+            speed = 1800;
             isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && charIdx === 0) {
             isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            nextSpeed = 400;
+            wordIdx = (wordIdx + 1) % words.length;
+            speed = 400;
         }
 
-        setTimeout(type, nextSpeed);
+        setTimeout(tick, speed);
     }
 
-    type();
+    tick();
 }
 
-/* ==========================================================================
-   3. Mobile Navigation Menu
-   ========================================================================== */
+/* 3. Mobile Navigation */
 function initMobileMenu() {
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    if (!mobileBtn || !navMenu) return;
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('navMenu');
+    if (!btn || !menu) return;
 
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-        const isOpen = navMenu.classList.contains('open');
-        mobileBtn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        btn.innerHTML = menu.classList.contains('open') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
 
-    // Close menu when clicking nav item
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    menu.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('open');
-            mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            menu.classList.remove('open');
+            btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
         });
     });
 }
 
-/* ==========================================================================
-   4. Code Snippet Tabs Switcher
-   ========================================================================== */
+/* 4. Code Tabs */
 function initCodeTabs() {
     const tabs = document.querySelectorAll('.code-tab');
     const blocks = document.querySelectorAll('.code-block');
@@ -126,127 +104,102 @@ function initCodeTabs() {
             blocks.forEach(b => b.classList.remove('active'));
 
             tab.classList.add('active');
-            const targetId = tab.getAttribute('data-target');
-            const targetBlock = document.getElementById(targetId);
-            if (targetBlock) {
-                targetBlock.classList.add('active');
-            }
+            const target = document.getElementById(tab.getAttribute('data-target'));
+            if (target) target.classList.add('active');
         });
     });
 }
 
-/* ==========================================================================
-   5. Copy Buttons & Toast Notifications
-   ========================================================================== */
+/* 5. Copy Buttons */
 function initCopyButtons() {
-    // Copy code snippet
     const btnCopyCode = document.getElementById('btnCopyCode');
     if (btnCopyCode) {
         btnCopyCode.addEventListener('click', () => {
             const activeBlock = document.querySelector('.code-block.active');
             if (activeBlock) {
                 navigator.clipboard.writeText(activeBlock.innerText).then(() => {
-                    showToast('📋 Đã sao chép đoạn code vào bộ nhớ đệm!');
-                }).catch(() => {
-                    showToast('⚠️ Không thể sao chép code.');
+                    showToast('Đã sao chép đoạn mã');
                 });
             }
         });
     }
 
-    // Copy CLI command
     const copyCliBtn = document.getElementById('copyCliBtn');
     if (copyCliBtn) {
         copyCliBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('python3 run.py').then(() => {
-                showToast('🚀 Đã copy lệnh: python3 run.py');
-            }).catch(() => {
-                showToast('⚠️ Không thể sao chép.');
+                showToast('Đã sao chép: python3 run.py');
             });
         });
     }
 }
 
-/* ==========================================================================
-   6. Contact Form Simulation
-   ========================================================================== */
+/* 6. Contact Form */
 function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    if (!contactForm) return;
+    const form = document.getElementById('contactForm');
+    if (!form) return;
 
-    contactForm.addEventListener('submit', (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const senderName = document.getElementById('senderName').value.trim();
-        const senderMsg = document.getElementById('senderMsg').value.trim();
+        const name = document.getElementById('senderName').value.trim();
+        const msg = document.getElementById('senderMsg').value.trim();
+        if (!name || !msg) return;
 
-        if (!senderName || !senderMsg) {
-            showToast('⚠️ Vui lòng điền đủ tên và nội dung!');
-            return;
-        }
-
-        const btnSubmit = document.getElementById('btnSubmitForm');
-        btnSubmit.disabled = true;
-        btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang gửi...';
+        const btn = document.getElementById('btnSubmitForm');
+        btn.disabled = true;
+        btn.textContent = 'Đang gửi...';
 
         setTimeout(() => {
-            btnSubmit.disabled = false;
-            btnSubmit.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>Gửi Lời Nhắn</span>';
-            contactForm.reset();
-            showToast(`🎉 Cảm ơn ${senderName}! Lời nhắn đã được ghi nhận.`);
-        }, 800);
+            btn.disabled = false;
+            btn.textContent = 'Gửi Tin Nhắn';
+            form.reset();
+            showToast(`Cảm ơn ${name}, tin nhắn đã được gửi!`);
+        }, 600);
     });
 }
 
-/* ==========================================================================
-   7. Interactive Terminal Demo
-   ========================================================================== */
+/* 7. Terminal Interactive Demo */
 function initTerminalDemo() {
-    const testBtn = document.getElementById('btnTestInteractive');
-    const terminalScreen = document.getElementById('terminalScreen');
-    if (!testBtn || !terminalScreen) return;
+    const btn = document.getElementById('btnTestInteractive');
+    const screen = document.getElementById('terminalScreen');
+    if (!btn || !screen) return;
 
-    let clickCount = 0;
-    const sampleLogs = [
-        { time: '19:25:01', type: 't-green', text: 'GET /index.html 200 OK (1.2ms)' },
-        { time: '19:25:02', type: 't-cyan', text: 'GET /styles.css 200 OK (0.8ms)' },
-        { time: '19:25:03', type: 't-yellow', text: 'GET /script.js 200 OK (0.5ms)' },
-        { time: '19:25:04', type: 't-white', text: 'GET /assets/avatar.jpg 200 OK (2.1ms)' },
-        { time: '19:25:05', type: 't-green', text: '✨ Kiểm tra: Toàn bộ tài nguyên đã tải thành công 100%!' }
+    let count = 0;
+    const logs = [
+        'GET /index.html 200 OK',
+        'GET /styles.css 200 OK',
+        'GET /script.js 200 OK',
+        'GET /assets/avatar.jpg 200 OK',
+        '[READY] Server chạy mượt mà 100%'
     ];
 
-    testBtn.addEventListener('click', () => {
-        const log = sampleLogs[clickCount % sampleLogs.length];
-        clickCount++;
-
-        const logLine = document.createElement('div');
-        logLine.className = `t-line ${log.type}`;
-        logLine.innerHTML = `[${log.time}] ${log.text}`;
-        terminalScreen.appendChild(logLine);
-        terminalScreen.scrollTop = terminalScreen.scrollHeight;
-
-        showToast('⚡ Terminal nhận request: ' + log.text.split(' ')[0]);
+    btn.addEventListener('click', () => {
+        const line = document.createElement('div');
+        line.className = 't-line';
+        line.textContent = `> ${logs[count % logs.length]}`;
+        screen.appendChild(line);
+        screen.scrollTop = screen.scrollHeight;
+        count++;
+        showToast('Terminal phản hồi');
     });
 }
 
-/* ==========================================================================
-   8. Scroll Spy (Active Navbar Link)
-   ========================================================================== */
+/* 8. Scroll Spy */
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu .nav-link');
 
     window.addEventListener('scroll', () => {
-        let scrollY = window.pageYOffset;
-
+        const scrollY = window.pageYOffset;
         sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 120;
-            const sectionId = current.getAttribute('id');
+            const h = current.offsetHeight;
+            const top = current.offsetTop - 100;
+            const id = current.getAttribute('id');
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            if (scrollY > top && scrollY <= top + h) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
+                    if (link.getAttribute('href') === `#${id}`) {
                         link.classList.add('active');
                     }
                 });
@@ -255,20 +208,18 @@ function initScrollSpy() {
     });
 }
 
-/* ==========================================================================
-   9. Toast Utility
-   ========================================================================== */
-let toastTimeout;
-function showToast(message) {
+/* 9. Toast */
+let toastTimer;
+function showToast(msg) {
     const toast = document.getElementById('toastNotification');
     const msgEl = document.getElementById('toastMessage');
     if (!toast || !msgEl) return;
 
-    msgEl.textContent = message;
+    msgEl.textContent = msg;
     toast.classList.add('show');
 
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => {
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
         toast.classList.remove('show');
-    }, 3200);
+    }, 2800);
 }
