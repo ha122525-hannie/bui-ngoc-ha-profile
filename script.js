@@ -1,6 +1,6 @@
 /**
- * BÙI NGỌC HÀ - JAVASCRIPT LOGIC (MINIMALIST MONOCHROME)
- * Typewriter, Theme Toggle (Black / White), Code Switcher, Copy & Toast
+ * BÙI NGỌC HÀ - JAVASCRIPT LOGIC (MOBILE UI/UX OPTIMIZED)
+ * Typewriter, Theme Toggle (with mobile theme-color sync), Touch Drawer, Back-To-Top & Toast
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,23 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initTerminalDemo();
     initScrollSpy();
+    initBackToTop();
 });
 
-/* 1. Theme Management (Dark / Light) */
+/* 1. Theme Management & Mobile Status Bar Color */
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
+    const themeMeta = document.getElementById('themeColorMeta');
     if (!themeToggle) return;
 
     const savedTheme = localStorage.getItem('ha_theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    applyTheme(savedTheme);
 
     themeToggle.addEventListener('click', () => {
         const cur = document.documentElement.getAttribute('data-theme') || 'dark';
         const target = cur === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', target);
+        applyTheme(target);
         localStorage.setItem('ha_theme', target);
         showToast(target === 'dark' ? 'Giao diện Tối' : 'Giao diện Sáng');
     });
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (themeMeta) {
+            themeMeta.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
+        }
+    }
 }
 
 /* 2. Typewriter Effect */
@@ -74,22 +83,39 @@ function initTypewriter() {
     tick();
 }
 
-/* 3. Mobile Navigation */
+/* 3. Mobile Navigation Drawer & Backdrop */
 function initMobileMenu() {
     const btn = document.getElementById('mobileMenuBtn');
     const menu = document.getElementById('navMenu');
+    const overlay = document.getElementById('navOverlay');
     if (!btn || !menu) return;
 
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('open');
-        btn.innerHTML = menu.classList.contains('open') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    function toggleMenu(open) {
+        const shouldOpen = open !== undefined ? open : !menu.classList.contains('open');
+        if (shouldOpen) {
+            menu.classList.add('open');
+            if (overlay) overlay.classList.add('active');
+            btn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        } else {
+            menu.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
+            btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            document.body.style.overflow = '';
+        }
+    }
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
 
+    if (overlay) {
+        overlay.addEventListener('click', () => toggleMenu(false));
+    }
+
     menu.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('open');
-            btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        });
+        link.addEventListener('click', () => toggleMenu(false));
     });
 }
 
@@ -205,10 +231,31 @@ function initScrollSpy() {
                 });
             }
         });
+    }, { passive: true });
+}
+
+/* 9. Back To Top Floating Button (Mobile) */
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 320) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }
 
-/* 9. Toast */
+/* 10. Toast */
 let toastTimer;
 function showToast(msg) {
     const toast = document.getElementById('toastNotification');
@@ -221,5 +268,5 @@ function showToast(msg) {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
         toast.classList.remove('show');
-    }, 2800);
+    }, 2600);
 }

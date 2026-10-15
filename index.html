@@ -2,7 +2,8 @@
 <html lang="vi" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000" id="themeColorMeta">
     <title>BÙI NGỌC HÀ | Sinh Viên Ngành Công Nghệ Phần Mềm</title>
     <meta name="description" content="Trang cá nhân sinh viên Bùi Ngọc Hà - Ngành Công nghệ phần mềm. Tổng hợp kiến thức lập trình Web (HTML, CSS, JavaScript, Python).">
     
@@ -15,9 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="stylesheet" href="styles.css?v=3.1">
 </head>
 <body>
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
     <!-- Header / Navbar -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
@@ -521,7 +524,12 @@ themeToggle.addEventListener('click', () => {
         <div class="toast-message" id="toastMessage">Thông báo!</div>
     </div>
 
+    <!-- Back to Top Button for Mobile -->
+    <button class="back-to-top-btn" id="backToTop" aria-label="Lên đầu trang" title="Lên đầu trang">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.1"></script>
 </body>
 </html>
